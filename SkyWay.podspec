@@ -7,26 +7,25 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'SkyWay'
-  s.version          = '0.2.1'
-  s.summary          = 'Unofficial SkyWay iOS SDK'
-  s.description      = <<-DESC
+  s.name = 'SkyWay'
+  s.version = '0.2.1'
+  s.summary = 'Unofficial SkyWay iOS SDK'
+  s.description = <<-DESC
 WebRTC library
 DESC
 
-  s.homepage         = 'http://skyway.io/'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'MASUI Yuichiro (Unofficial Packager)' => 'masui@masuidrive.jp' }
-  s.source           = { :git => 'https://github.com/masuidrive/SkyWay-iOS.git', :tag => s.version.to_s }
+  s.homepage = 'http://skyway.io/'
+  s.license = { :type => 'MIT' }
+  s.author = { 'MASUI Yuichiro (Unofficial Packager)' => 'masui@masuidrive.jp' }
 
   s.ios.deployment_target = '8.0'
+  s.source = { http: "https://codeload.github.com/nttcom/SkyWay-iOS-SDK/zip/v#{s.version}" }
+  s.source_files = "SkyWay-iOS-SDK-#{s.version}/SkyWay.framework/Versions/A/Headers/*.h"
+  s.public_header_files = "SkyWay-iOS-SDK-#{s.version}/SkyWay.framework/Versions/A/Headers/*.h"
 
-  s.source_files = 'SkyWay.framework/Versions/A/Headers/*.h'
-  s.public_header_files = 'SkyWay.framework/Versions/A/Headers/*.h'
-
-  s.frameworks          = %w(AudioToolbox AVFoundation CoreMedia CoreVideo VideoToolbox CoreGraphics Foundation GLKit SystemConfiguration)
+  s.frameworks = %w(AudioToolbox AVFoundation CoreMedia CoreVideo VideoToolbox CoreGraphics Foundation GLKit SystemConfiguration)
   s.libraries = %w(c++ stdc++ sqlite3 icucore)
-  s.vendored_frameworks = 'SkyWay.framework'
-  s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
-  s.compiler_flags      = "-ObjC"
+  s.vendored_frameworks = "SkyWay-iOS-SDK-#{s.version}/SkyWay.framework"
+  s.pod_target_xcconfig = { ENABLE_BITCODE: 'NO' }
+  s.compiler_flags = '-ObjC'
 end
