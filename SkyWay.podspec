@@ -20,6 +20,7 @@ DESC
 
   s.ios.deployment_target = '8.0'
   s.source = { http: "https://codeload.github.com/nttcom/SkyWay-iOS-SDK/zip/v#{s.version}" }
+  s.prepare_command = "curl \"https://codeload.github.com/nttcom/SkyWay-iOS-SDK/tar.gz/v#{s.version}\" | tar xfz -"
   s.source_files = "SkyWay-iOS-SDK-#{s.version}/SkyWay.framework/Versions/A/Headers/*.h"
   s.public_header_files = "SkyWay-iOS-SDK-#{s.version}/SkyWay.framework/Versions/A/Headers/*.h"
 
